@@ -2,5 +2,5 @@
     <string name="app_name">My Web App</string>
     <string name="hello_world">Hello World!</string>
     <string name="error">エラー</string>
-    <string name="text">名前を入力して下さい</string>
+    <string name="text">開きたいWebのリンクを入力してください</string>
 </resources>

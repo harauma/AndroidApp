@@ -22,15 +22,26 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.text);
         final Context context = this;
         final EditText editText = findViewById(R.id.edit);
-        Button button = findViewById(R.id.button);
+
+        Button myWebButton = findViewById(R.id.myWebButton);
+        Button searchButton = findViewById(R.id.searchButton);
 
         final Intent intent = new Intent(this, SubActivity.class);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, editText.getText(), Toast.LENGTH_LONG).show();
-                intent.putExtra("key", editText.getText());
+                Toast.makeText(context, editText.getText() + "を開きます", Toast.LENGTH_LONG).show();
+                intent.putExtra("url", editText.getText().toString());
+                startActivity(intent);
+            }
+        });
+
+        myWebButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Googleを開きます", Toast.LENGTH_LONG).show();
+                intent.putExtra("url", "https://google.com");
                 startActivity(intent);
             }
         });
